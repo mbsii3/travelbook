@@ -12,8 +12,30 @@
     <div>Purpose:</div>
     <div><%= destination.purpose %></div>
 </section>
+
+<br>
+<br>
 <section class="td-plans">
+    <form action="/destinations/<%= destination._id %>/plans" method="POST" class="plan-form">
+        <label>Add a Plan:</label>
+        <br>
+        <textarea name="plan"></textarea>
+        <br>
+        <button type="submit">Add Plan</button>
+    </form>
+    <br>
+    <br>
     <div>My Plans:</div>
+
+    <% if (destination.plans.length) { %>
+        <% destination.plans.forEach(function(p) { %>
+            <ul>
+                <li><%= p.plan %></li>
+            </ul>
+        <% }); %>
+        <% } else { %>
+            <h5>No Plans Yet</h5>
+        <%  }  %>
 </section>
 
 

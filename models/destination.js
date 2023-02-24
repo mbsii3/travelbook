@@ -1,6 +1,15 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const planSchema = new Schema({
+    plan: {
+        type: String,
+        required: true
+    }
+}, {
+    timestamps: true
+});
+
 const destinationSchema = new Schema({
     city: {
         type: String,
@@ -21,6 +30,7 @@ const destinationSchema = new Schema({
         enum: ['Personal', 'Family', 'Business', 'Study Abroad'],
         required: true
     },
+    plans: [planSchema]
 }, {
     timestamps: true
 });
