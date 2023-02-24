@@ -1,14 +1,17 @@
 const Destination = require('../models/destination');
 
+
 module.exports = {
     index,
     new: newDestination,
-    create
+    create,
+    show
+    // delete: deleteDestination
 }
 
 function index(req, res) {
     Destination.find({}, function(err, destinations) {
-        res.render('destinations/index', { title: 'My Destinations', destinations });
+        res.render('destinations/index', { title: 'My TravelBook', destinations });
     });
 }
 
@@ -19,8 +22,19 @@ function newDestination(req, res) {
 function create(req, res) {
     let destination = new Destination(req.body);
     destination.save(function(err) {
-        console.log(destination);
         if (err) return res.redirect('/destinations/new');
         res.redirect('/destinations');
     });
 }
+
+function show(req, res) {
+    Destination.findById(req.params.id, function(err, destination) {
+        res.render('destinations/show', { title: 'Travel Destination', destination});
+    });
+}
+
+// function deleteDestination(req, res) {
+//     console.log(req.params.id);
+//     Destination.findByIdAndDelete(req.params.id);
+//     res.redirect('/');
+// }

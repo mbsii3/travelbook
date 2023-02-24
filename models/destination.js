@@ -12,14 +12,13 @@ const destinationSchema = new Schema({
     },
     date: {
         type: Date,
-        min: '02-25-2023',
-        max: '01-01-2030',
-        default: '02-25-2023',
+        min: '02/25/2023',
+        max: '01/01/2030',
         required: true
     },
     purpose: {
         type: String,
-        enum: ['Personal', 'Family', ' Business', 'Study Abroad'],
+        enum: ['Personal', 'Family', 'Business', 'Study Abroad'],
         required: true
     },
 }, {

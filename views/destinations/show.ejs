@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<h1><%= title %></h1>
+
+<section class="td-details">
+    <div>City:</div>
+    <div><%= destination.city %></div>
+    <div>Country:</div>
+    <div><%= destination.country %></div>
+    <div>Date:</div>
+    <div><%= (destination.date).toLocaleDateString('en-US') %></div>
+    <div>Purpose:</div>
+    <div><%= destination.purpose %></div>
+</section>
+<section class="td-plans">
+    <div>My Plans:</div>
+</section>
+
+
+
+
+<%- include('../partials/footer') %>

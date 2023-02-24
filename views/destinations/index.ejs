@@ -5,19 +5,27 @@
 <table>
     <thead>
         <tr>
+            <th></th>
             <th>City</th>
             <th>Country</th>
             <th>Date</th>
             <th>Purpose</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         <% destinations.forEach(function(d) {  %> 
             <tr>
+                <td><form action="destinations/<%= d._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                </form></td>
+                
                 <td><%= d.city %></td>
                 <td><%= d.country %></td>
-                <td><%= d.date %></td>
+                <td><%= (d.date).toLocaleDateString('en-US') %></td>
                 <td><%= d.purpose %></td>
+                <td><a href="/destinations/<%= d._id %>">My Plans</a></td>
+            
             </tr>
             <% }); %>
     </tbody>
