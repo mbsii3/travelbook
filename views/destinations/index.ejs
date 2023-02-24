@@ -2,5 +2,26 @@
 
 <h1><%= title %></h1>
 
+<table>
+    <thead>
+        <tr>
+            <th>City</th>
+            <th>Country</th>
+            <th>Date</th>
+            <th>Purpose</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% destinations.forEach(function(d) {  %> 
+            <tr>
+                <td><%= d.city %></td>
+                <td><%= d.country %></td>
+                <td><%= d.date %></td>
+                <td><%= d.purpose %></td>
+            </tr>
+            <% }); %>
+    </tbody>
+</table>
+
 
 <%- include('../partials/footer') %>

@@ -7,7 +7,9 @@ module.exports = {
 }
 
 function index(req, res) {
-    res.render('destinations/index', { title: 'My Destinations' });
+    Destination.find({}, function(err, destinations) {
+        res.render('destinations/index', { title: 'My Destinations', destinations });
+    });
 }
 
 function newDestination(req, res) {
@@ -17,7 +19,8 @@ function newDestination(req, res) {
 function create(req, res) {
     let destination = new Destination(req.body);
     destination.save(function(err) {
+        console.log(destination);
         if (err) return res.redirect('/destinations/new');
-        res.redirect('/');
+        res.redirect('/destinations');
     });
 }
