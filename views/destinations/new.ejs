@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<h1><%= title %></h1>
+<form action="/destinations" method="POST">
+    <label>City:
+        <input type="text" name="city">
+    </label><br>
+    <!-- <label>Country:
+        <input type="text" name="country">
+    </label><br>
+    <label>Date:
+        <input type="date" name="date">
+    </label><br>
+    <label>Purpose:
+        <select name="purpose">
+            <option value="Personal">Personal</option>
+            <option value="Family">Family</option>
+            <option value="Business">Business</option>
+            <option value="Study Abroad">Study Abroad</option>
+        </select>
+    </label><br> -->
+    <button type="submit">Add Destination</button>
+</form>
+
+
+<%- include('../partials/footer') %>
