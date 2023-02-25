@@ -5,7 +5,7 @@ module.exports = {
     index,
     new: newDestination,
     create,
-    show
+    showLog
     // delete: deleteDestination
 }
 
@@ -27,9 +27,9 @@ function create(req, res) {
     });
 }
 
-function show(req, res) {
+function showLog(req, res) {
     Destination.findById(req.params.id, function(err, destination) {
-        res.render('destinations/show', { title: 'Travel Destination', destination});
+        res.render('destinations/show', { title: 'Travel Log', destination});
     });
 }
 

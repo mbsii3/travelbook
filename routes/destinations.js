@@ -10,7 +10,7 @@ router.get('/', destinationsCtrl.index);
 router.get('/new', destinationsCtrl.new);
 
 // GET /destinations/:id
-router.get('/:id', destinationsCtrl.show);
+router.get('/:id', destinationsCtrl.showLog);
 
 //POST /destinations
 router.post('/', destinationsCtrl.create);

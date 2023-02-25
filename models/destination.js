@@ -1,6 +1,15 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const memorySchema = new Schema ({
+    memory: {
+        type: String,
+        required: true
+    }
+}, {
+    timestamps: true
+});
+
 const planSchema = new Schema({
     plan: {
         type: String,
@@ -30,7 +39,8 @@ const destinationSchema = new Schema({
         enum: ['Personal', 'Family', 'Business', 'Study Abroad'],
         required: true
     },
-    plans: [planSchema]
+    plans: [planSchema],
+    memories: [memorySchema]
 }, {
     timestamps: true
 });

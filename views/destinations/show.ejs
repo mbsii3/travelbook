@@ -2,24 +2,12 @@
 
 <h1><%= title %></h1>
 
-<section class="td-details">
-    <div>City:</div>
-    <div><%= destination.city %></div>
-    <div>Country:</div>
-    <div><%= destination.country %></div>
-    <div>Date:</div>
-    <div><%= (destination.date).toLocaleDateString('en-US') %></div>
-    <div>Purpose:</div>
-    <div><%= destination.purpose %></div>
-</section>
 
-<br>
-<br>
 <section class="td-plans">
     <form action="/destinations/<%= destination._id %>/plans" method="POST" class="plan-form">
         <label>Add a Plan:</label>
         <br>
-        <textarea name="plan"></textarea>
+        <input type="text" name="plan">
         <br>
         <button type="submit">Add Plan</button>
     </form>
@@ -29,8 +17,34 @@
 
     <% if (destination.plans.length) { %>
         <% destination.plans.forEach(function(p) { %>
-            <ul>
-                <li><%= p.plan %></li>
+            <ul class="plans-list">
+                <li><input type="checkbox"><%= p.plan %></li>
+            </ul>
+        <% }); %>
+        <% } else { %>
+            <h5>No Plans Yet</h5>
+        <%  }  %>
+</section>
+
+<br>
+<br>
+<br>
+<section class="tl-memories">
+    <form action="/destinations/<%= destination._id %>/memories" method="POST" class="memory-form">
+        <label>Log a Memory:</label>
+        <br>
+        <input type="text" name="memory">
+        <br>
+        <button type="submit">Add Memory</button>
+    </form>
+    <br>
+    <br>
+    <div>My Memories:</div>
+
+    <% if (destination.memories.length) { %>
+        <% destination.memories.forEach(function(m) { %>
+            <ul class="memories-list">
+                <li><%= m.memory %></li>
             </ul>
         <% }); %>
         <% } else { %>
