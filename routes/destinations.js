@@ -6,7 +6,7 @@ const destinationsCtrl = require('../controllers/destinations');
 // GET /destinations
 router.get('/', destinationsCtrl.index);
 
-//GET /destinations/new
+// GET /destinations/new
 router.get('/new', destinationsCtrl.new);
 
 // GET /destinations/:id
@@ -17,5 +17,8 @@ router.post('/', destinationsCtrl.create);
 
 // POST(DELETE) /destinations/:id
 router.delete('/:id', destinationsCtrl.delete);
+
+// POST(PUT) /destinations/:id
+router.put('/:id', destinationsCtrl.update);
 
 module.exports = router;

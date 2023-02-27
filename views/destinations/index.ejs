@@ -2,34 +2,61 @@
 
 <h1><%= title %></h1>
 
-<table>
-    <thead>
+<% if (destinations.length) { %>
+
+<% destinations.forEach(function(d) {  %>
+    <table class="destinations-table">
+        <thead>
         <tr>
-            <th></th>
             <th>City</th>
             <th>Country</th>
             <th>Date</th>
             <th>Purpose</th>
             <th></th>
+            <th></th>
+            <th></th>
         </tr>
-    </thead>
-    <tbody>
-        <% destinations.forEach(function(d) {  %> 
+        </thead>
+        <tbody>
             <tr>
-                <td><form action="destinations/<%= d._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                </form></td>
-                
                 <td><%= d.city %></td>
                 <td><%= d.country %></td>
                 <td><%= (d.date).toLocaleDateString('en-US') %></td>
                 <td><%= d.purpose %></td>
                 <td><a href="/destinations/<%= d._id %>">Travel Log</a></td>
-            
+                <td><form action="destinations/<%= d._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                </form></td>
             </tr>
-            <% }); %>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+
+    <form action="destinations/<%= d._id %>?_method=PUT" method="POST">
+        <label>City:
+            <input type="text" name="city" value="<%= d.city %>">
+        </label><br>
+        <label>Country:
+            <input type="text" name="country" value="<%= d.country %>">
+        </label><br>
+        <label>Date:
+            <input type="date" name="date" value="<%= d.date %>">
+        </label><br>
+        <label>Purpose:
+            <select name="purpose">
+                <option value="Personal">Personal</option>
+                <option value="Family">Family</option>
+                <option value="Business">Business</option>
+                <option value="Study Abroad">Study Abroad</option>
+            </select>
+        </label><br>
+        <button type="submit">Update</button>
+    </form>
+
+<% }); %>
+
+<% } else { %>
+    <h5>No Destinations Yet</h5>
+<%  }  %>
 
 
 <%- include('../partials/footer') %>
