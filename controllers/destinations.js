@@ -5,8 +5,8 @@ module.exports = {
     index,
     new: newDestination,
     create,
-    showLog
-    // delete: deleteDestination
+    showLog,
+    delete: deleteDestination
 }
 
 function index(req, res) {
@@ -33,8 +33,8 @@ function showLog(req, res) {
     });
 }
 
-// function deleteDestination(req, res) {
-//     console.log(req.params.id);
-//     Destination.findByIdAndDelete(req.params.id);
-//     res.redirect('/');
-// }
+function deleteDestination(req, res) {
+    Destination.findByIdAndRemove({ _id: req.params.id }).then(function() {
+        res.redirect('/destinations');
+    });
+}

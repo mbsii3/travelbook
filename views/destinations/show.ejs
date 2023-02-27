@@ -5,10 +5,7 @@
 
 <section class="td-plans">
     <form action="/destinations/<%= destination._id %>/plans" method="POST" class="plan-form">
-        <label>Add a Plan:</label>
-        <br>
-        <input type="text" name="plan">
-        <br>
+        <input type="text" name="plan" placeholder="Add a Plan">
         <button type="submit">Add Plan</button>
     </form>
     <br>
@@ -33,7 +30,7 @@
     <form action="/destinations/<%= destination._id %>/memories" method="POST" class="memory-form">
         <label>Log a Memory:</label>
         <br>
-        <input type="text" name="memory">
+        <textarea name="memory"></textarea>
         <br>
         <button type="submit">Add Memory</button>
     </form>

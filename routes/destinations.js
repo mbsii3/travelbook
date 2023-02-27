@@ -16,6 +16,6 @@ router.get('/:id', destinationsCtrl.showLog);
 router.post('/', destinationsCtrl.create);
 
 // POST(DELETE) /destinations/:id
-// router.delete('/:id', destinationsCtrl.delete);
+router.delete('/:id', destinationsCtrl.delete);
 
 module.exports = router;
