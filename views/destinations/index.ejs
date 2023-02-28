@@ -5,53 +5,65 @@
 <% if (destinations.length) { %>
 
 <% destinations.forEach(function(d) {  %>
-    <table class="destinations-table">
-        <thead>
-        <tr>
-            <th>City</th>
-            <th>Country</th>
-            <th>Date</th>
-            <th>Purpose</th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><%= d.city %></td>
-                <td><%= d.country %></td>
-                <td><%= (d.date).toLocaleDateString('en-US') %></td>
-                <td><%= d.purpose %></td>
-                <td><a href="/destinations/<%= d._id %>">Travel Log</a></td>
-                <td><form action="destinations/<%= d._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                </form></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <form action="destinations/<%= d._id %>?_method=PUT" method="POST">
-        <label>City:
-            <input type="text" name="city" value="<%= d.city %>">
-        </label><br>
-        <label>Country:
-            <input type="text" name="country" value="<%= d.country %>">
-        </label><br>
-        <label>Date:
-            <input type="date" name="date" value="<%= d.date %>">
-        </label><br>
-        <label>Purpose:
-            <select name="purpose">
-                <option value="Personal">Personal</option>
-                <option value="Family">Family</option>
-                <option value="Business">Business</option>
-                <option value="Study Abroad">Study Abroad</option>
-            </select>
-        </label><br>
-        <button type="submit">Update</button>
-    </form>
-
+    <div class="container">
+        <div class="collapsible">
+            <form action="destinations/<%= d._id %>?_method=DELETE" method="POST">
+                <button type="submit" class="delete-btn">X</button>
+            </form>
+            <input type="checkbox" class="edit-checkbox"><span class="edit-text">Edit</span>
+            <div class="destination">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Country</th>
+                        <th>Date</th>
+                        <th>Purpose</th>
+                        <th></th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><%= d.city %></td>
+                            <td><%= d.country %></td>
+                            <td><%= (d.date).toLocaleDateString('en-US') %></td>
+                            <td><%= d.purpose %></td>
+                            <td><a href="/destinations/<%= d._id %>">Travel Log</a></td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="collapsible-form">
+                <form action="destinations/<%= d._id %>/?_method=PUT" method="POST">
+                    <label>City:
+                    <input type="text" name="city" value="<%= d.city %>">
+                    </label>
+                    <label>Country:
+                    <input type="text" name="country" value="<%= d.country %>">
+                    </label><br>
+                    <label>Date:
+                    <input type="date" name="date" value="<%= d.date %>">
+                    </label>
+                    <label>Purpose:
+                    <select name="purpose">
+                        <option value="Personal">Personal</option>
+                        <option value="Family">Family</option>
+                        <option value="Business">Business</option>
+                        <option value="Study Abroad">Study Abroad</option>
+                    </select>
+                    </label>
+                    <button type="submit">Update</button>
+                </form>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+   
+    
 <% }); %>
 
 <% } else { %>

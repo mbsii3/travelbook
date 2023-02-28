@@ -45,3 +45,4 @@ function updateDestination(req, res) {
         res.redirect('/destinations');
     });
 }
+

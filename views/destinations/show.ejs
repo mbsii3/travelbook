@@ -9,8 +9,6 @@
         <button type="submit">Add Plan</button>
     </form>
     <br>
-    <br>
-    <div>My Plans:</div>
 
     <% if (destination.plans.length) { %>
         <% destination.plans.forEach(function(p) { %>
@@ -23,8 +21,6 @@
         <%  }  %>
 </section>
 
-<br>
-<br>
 <br>
 <section class="tl-memories">
     <form action="/destinations/<%= destination._id %>/memories" method="POST" class="memory-form">
@@ -45,7 +41,7 @@
             </ul>
         <% }); %>
         <% } else { %>
-            <h5>No Plans Yet</h5>
+            <h5>No Memories Logged</h5>
         <%  }  %>
 </section>
 
