@@ -1,49 +1,58 @@
 <%- include('../partials/header') %>
-
-<h1><%= destination.city %>, <%= destination.country %></h1>
-
-
-<section class="td-plans">
-    <form action="/destinations/<%= destination._id %>/plans" method="POST" class="plan-form">
-        <input type="text" name="plan" placeholder="Add a Plan">
-        <button type="submit">Add Plan</button>
-    </form>
+<section class="complete-tl-container">
+    <div class="destination-show-header">
+        <div class="destination-show-div">
+            <h1><%= destination.city %> | <%= destination.country %></h1>
+        </div>
+    </div>
+    
+    
+    
+    <section class="tl-plans-container">
+        <div class="tl-plans-div">
+            <form action="/destinations/<%= destination._id %>/plans" method="POST" class="plan-form">
+                <input type="text" name="plan" placeholder="Add a Plan">
+                <button type="submit">Add Plan</button>
+            </form>
+            <br>
+        
+            <% if (destination.plans.length) { %>
+                <% destination.plans.forEach(function(p) { %>
+                    <ul class="plans-list">
+                        <li><input type="checkbox"><%= p.plan %></li>
+                    </ul>
+                <% }); %>
+                <% } else { %>
+                    <h5>No Plans Yet</h5>
+                <%  }  %>
+        </div>
+    </section>
+    
     <br>
-
-    <% if (destination.plans.length) { %>
-        <% destination.plans.forEach(function(p) { %>
-            <ul class="plans-list">
-                <li><input type="checkbox"><%= p.plan %></li>
-            </ul>
-        <% }); %>
-        <% } else { %>
-            <h5>No Plans Yet</h5>
-        <%  }  %>
+    <section class="tl-memories-container">
+        <div class="tl-memories-div">
+            <div>My Memories:</div>
+            <br>
+            <form action="/destinations/<%= destination._id %>/memories" method="POST" class="memory-form">
+                <textarea name="memory" placeholder="Log a Memory"></textarea>
+                <br>
+                <button type="submit">Add Memory</button>
+            </form>
+            <br>
+            <% if (destination.memories.length) { %>
+                <% destination.memories.forEach(function(m) { %>
+                    <div class="memory-div">
+                        <p><%= m.memory %></p>
+                    </div>
+                <% }); %>
+                <% } else { %>
+                    <h5>No Memories Logged</h5>
+                <%  }  %>
+        </div>
+        
+    </section>
 </section>
 
-<br>
-<section class="tl-memories">
-    <form action="/destinations/<%= destination._id %>/memories" method="POST" class="memory-form">
-        <label>Log a Memory:</label>
-        <br>
-        <textarea name="memory"></textarea>
-        <br>
-        <button type="submit">Add Memory</button>
-    </form>
-    <br>
-    <br>
-    <div>My Memories:</div>
-
-    <% if (destination.memories.length) { %>
-        <% destination.memories.forEach(function(m) { %>
-            <ul class="memories-list">
-                <li><%= m.memory %></li>
-            </ul>
-        <% }); %>
-        <% } else { %>
-            <h5>No Memories Logged</h5>
-        <%  }  %>
-</section>
 
 
 

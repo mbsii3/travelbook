@@ -16,7 +16,6 @@ nav {
   height: 4rem;
   border: 2px solid;
   background-color: black;
-  margin-bottom: 1rem;
 }
 
 nav a {
@@ -27,6 +26,12 @@ nav a {
   color: white;
   font-weight: bold;
   margin: 0 1rem 0 1rem;
+}
+
+nav a:hover {
+  background-color: white;
+  color: black;
+  transition: all .1s ease;
 }
 
 .title-nav {
@@ -40,20 +45,45 @@ nav a {
 .nav-menu {
   display: flex;
   justify-content: center;
+
 }
 
-td {
-  padding: 12px;
+table {
+  table-layout: fixed;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 th {
   text-decoration: underline;
+  font-size: 16px;
+  padding: .5rem 0 .1rem 0;
+}
+
+td {
+  text-align: center;
+  font-size: 13px;
+  padding: .5rem;
+}
+
+.user-index-header-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.user-index-header-div {
+  border: 2px solid;
+  border-radius: 2px;
+  width: 250px;
+  margin-top: 1.5rem;
 }
 
 .user-index-header {
-  font-size: 1rem;
+  font-size: 14px;
   text-align: center;
-  padding: 1rem;
+  padding: .5rem;
 }
 
 .delete-btn {
@@ -61,7 +91,8 @@ th {
   background-color: lightcoral;
   font-weight: bold;
   border: none;
-  font-size: 7px; 
+  border-radius: 1px;
+  font-size: 8px;
 }
 
 .delete-btn:hover {
@@ -69,22 +100,14 @@ th {
 }
 
 .edit-checkbox {
-  margin-top: 1px;
-  margin-left: 550px;
+  display: flex;
+  margin-top: -10px;
+  margin-left: 612px;
   height: 10px;
-}
-
-.edit-text {
-  font-weight: bold;
-  font-size: 12px;
 }
 
 .edit-checkbox:hover {
   cursor: pointer;
-}
-
-.plans-list {
-  list-style: none;
 }
 
 .new-destination-form {
@@ -94,18 +117,18 @@ th {
 }
 
 .new-destination-square {
-  border: 1px solid;
-  border-radius: 25px;
+  border: 2px solid;
+  border-radius: 5px;
   width: 500px;
   height: 350px;
   display: flex;
   justify-content: center;
-  background-color: lightgray;
 }
 
 .new-destination-form input {
   width: 100%;
   margin: 8px;
+  border-radius: 2px;
   border: 2px solid;
 }
 
@@ -117,13 +140,18 @@ th {
 .new-destination-form select {
   width: 100%;
   margin: 8px;
+  border-radius: 2px;
   border: 2px solid;
 }
 
 .new-destination-form button {
   width: 5rem;
   height: 2rem;
+  margin: 8px;
   margin-left: 6rem;
+  border-radius: 3px;
+  background-color: black;
+  color: white;
 }
 
 .new-destination-form select:hover {
@@ -132,11 +160,13 @@ th {
 
 .new-destination-form button:hover {
   cursor: pointer;
+  background-color: white;
+  color: black;
 }
 
 .new-destination-form h1 {
   text-align: center;
-  margin-top: 2rem;
+  margin: 1.5rem;
 }
 
 
@@ -147,20 +177,20 @@ th {
 }
 
 .collapsible {
-  width: 600px;
+  width: 625px;
   background-color: white;
   border: 2px solid;
+  border-radius: 5px;
+  white-space: nowrap;
 }
 
-.destination {
-  margin-left: 75px;
-  margin-right: auto;
+.destination a {
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .collapsible .destination {
-  position: relative;
-  display: block;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .collapsible .destination::after {
@@ -172,7 +202,48 @@ th {
   height: 18px;
 }
 
-.collapsible-form{
+.edit-form-section {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+.edit-form-section input {
+  margin: 4px;
+  width: 70%;
+  border: 2px solid;
+  border-radius: 2px;
+  font-size: 13px;
+}
+
+.edit-form-section select {
+  margin: 4px;
+  border: 2px solid;
+  border-radius: 2px;
+  font-size: 13px;
+}
+
+.edit-form-section button {
+  margin-top: 1px;
+  height: 26px;
+  border: 2px solid;
+  border-radius: 3px;
+  background-color: black;
+  font-size: 13px;
+  color: white;
+}
+
+.edit-form-section select {
+  cursor: pointer;
+}
+
+.edit-form-section button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.collapsible-form {
   display: flex;
   justify-content: center;
   background-color: white;
@@ -190,4 +261,58 @@ th {
   padding-bottom: 15px;
   opacity: 1;
   top: 0;
+}
+
+.complete-tl-container {
+  height: 100%;
+  width: 800px;
+  margin: 0 auto;
+  border: 2px solid;
+  border-top-style: none;
+  padding: 2rem 0 2rem 0;
+}
+
+.destination-show-header {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.destination-show-div h1 {
+  font-size: 2rem;
+}
+
+.tl-plans-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.plans-list {
+  list-style: none;
+  margin-bottom: .1rem;
+}
+
+.plans-list input {
+  margin-right: 1rem;
+}
+
+.tl-memories-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.tl-memories-div textarea {
+  width: 525px;
+  border: 2px solid;
+}
+
+.memory-div {
+  width: 500px;
+  margin-top: 1rem;
+  border: 2px solid;
+  border-radius: 2px;
+  padding: 1rem;
 }
