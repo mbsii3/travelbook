@@ -1,26 +1,32 @@
 <%- include('../partials/header') %>
 
-<h1><%= title %></h1>
-<form action="/destinations" method="POST">
-    <label>City:
-        <input type="text" name="city">
-    </label><br>
-    <label>Country:
-        <input type="text" name="country">
-    </label><br>
-    <label>Date:
-        <input type="date" name="date" value="2023-03-01">
-    </label><br>
-    <label>Purpose:
-        <select name="purpose">
-            <option value="Personal">Personal</option>
-            <option value="Family">Family</option>
-            <option value="Business">Business</option>
-            <option value="Study Abroad">Study Abroad</option>
-        </select>
-    </label><br>
-    <button type="submit">Add Destination</button>
-</form>
+<section class="new-destination-form">
+    <div class="new-destination-square">
+        <form action="/destinations" method="POST" class="new-destination-inputs">
+            <h1>Add Destination</h1>
+            <label>City:
+                <input type="text" name="city">
+            </label><br>
+            <label>Country:
+                <input type="text" name="country">
+            </label><br>
+            <label>Date:
+                <input type="date" name="date" value="2023-03-01">
+            </label><br>
+            <label>Purpose:
+                <select name="purpose">
+                    <option value="Personal">Personal</option>
+                    <option value="Family">Family</option>
+                    <option value="Business">Business</option>
+                    <option value="Study Abroad">Study Abroad</option>
+                </select>
+            </label><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+</section>
+
 
 
 <%- include('../partials/footer') %>

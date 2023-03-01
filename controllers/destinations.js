@@ -1,4 +1,5 @@
 const Destination = require('../models/destination');
+const User = require('../models/user');
 
 
 module.exports = {
@@ -11,13 +12,13 @@ module.exports = {
 }
 
 function index(req, res) {
-    Destination.find({}, function(err, destinations) {
-        res.render('destinations/index', { title: 'My TravelBook', destinations });
+    Destination.find({}, function(err, destinations, users) {
+        res.render('destinations/index', { destinations, users });
     });
 }
 
 function newDestination(req, res) {
-    res.render('destinations/new', { title: "Add Destination" });
+    res.render('destinations/new');
 }
 
 function create(req, res) {
@@ -30,7 +31,7 @@ function create(req, res) {
 
 function showLog(req, res) {
     Destination.findById(req.params.id, function(err, destination) {
-        res.render('destinations/show', { title: 'Travel Log', destination});
+        res.render('destinations/show', { destination});
     });
 }
 

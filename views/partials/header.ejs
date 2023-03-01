@@ -8,21 +8,28 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-  <nav>
-    <a href="/">Home</a>
+  <header class="nav-header">
 
-    <% if (user) { %>
+    <div class="title-nav">
+      <h1>TravelBook</h1>
+    </div>
 
-    <a href="/destinations/new">Add Destination</a>
+    <nav class="nav-menu">
+      <a href="/">Home</a>
 
-    <a href="/destinations">My TravelBook</a>
+      <% if (user) { %>
 
-    <a href="/logout">Logout</a>
+      <a href="/destinations/new">Add Destination</a>
 
-    <% } else { %>
+      <a href="/destinations">My TravelBook</a>
 
-    <a href="/auth/google">Login</a>
+      <a href="/logout">Logout</a>
 
-    <% } %>
+      <% } else { %>
 
-  </nav>
+      <a href="/auth/google">Login</a>
+
+      <% } %>
+    </nav>
+
+  </header>
