@@ -448,16 +448,6 @@ td {
   font-family: 'poppins';
 }
 
-.memory-div {
-  width: 555px;
-  margin-top: 1rem;
-  border: 2px solid;
-  border-radius: 2px;
-  padding: 1rem;
-  background-color: white;
-  color: black;
-}
-
 .memory-form {
   display: flex;
 }
@@ -497,4 +487,27 @@ td {
   border: 1px solid;
   padding: 2px;
   margin: 0 auto;
+}
+
+.memory-div {
+  width: 588px;
+  margin-bottom: 1.5rem;
+  border: 2px solid;
+  border-radius: 2px;
+  background-color: white;
+  color: black;
+}
+
+.memory-date {
+  border: 2px solid;
+  padding: 4px;
+  margin-bottom: 1rem;
+  font-size: 11px;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+}
+
+.memory-div p {
+  padding: 0 1rem 1rem 1rem;
 }

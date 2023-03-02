@@ -46,6 +46,7 @@
         <% if (destination.memories.length) { %>
             <% destination.memories.forEach(function(m) { %>
                 <div class="memory-div">
+                    <div class="memory-date">Memory Made <%= new Date().toLocaleDateString() %></div>
                     <p><%= m.memory %></p>
                 </div>
             <% }); %>
