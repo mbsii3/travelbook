@@ -2,23 +2,24 @@ const express = require('express');
 const router = express.Router();
 
 const destinationsCtrl = require('../controllers/destinations');
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // GET /destinations
-router.get('/', destinationsCtrl.index);
+router.get('/', ensureLoggedIn, destinationsCtrl.index);
 
 // GET /destinations/new
-router.get('/new', destinationsCtrl.new);
+router.get('/new', ensureLoggedIn, destinationsCtrl.new);
 
 // GET /destinations/:id
-router.get('/:id', destinationsCtrl.showLog);
+router.get('/:id', ensureLoggedIn, destinationsCtrl.showLog);
 
 //POST /destinations
-router.post('/', destinationsCtrl.create);
+router.post('/', ensureLoggedIn, destinationsCtrl.create);
 
 // POST(DELETE) /destinations/:id
-router.delete('/:id', destinationsCtrl.delete);
+router.delete('/:id', ensureLoggedIn, destinationsCtrl.delete);
 
 // POST(PUT) /destinations/:id
-router.put('/:id', destinationsCtrl.update);
+router.put('/:id', ensureLoggedIn, destinationsCtrl.update);
 
 module.exports = router;

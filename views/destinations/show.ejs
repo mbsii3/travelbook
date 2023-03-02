@@ -21,6 +21,9 @@
                 <div class="plans-list">
                     <div class="plan-div">
                         <input type="checkbox"><%= p.plan %>
+                        <form action="/plans/<%= p._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
                     </div>
                 </div>
             <% }); %>
@@ -46,6 +49,9 @@
         <% if (destination.memories.length) { %>
             <% destination.memories.forEach(function(m) { %>
                 <div class="memory-div">
+                        <form action="/memories/<%= m._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
                     <div class="memory-date">Memory Made <%= new Date().toLocaleDateString() %></div>
                     <p><%= m.memory %></p>
                 </div>

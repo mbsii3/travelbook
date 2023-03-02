@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
-
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 const memoriesCtrl = require('../controllers/memories');
 
 // POST /destinations/:id/memories
-router.post('/destinations/:id/memories', memoriesCtrl.create);
+router.post('/destinations/:id/memories', ensureLoggedIn, memoriesCtrl.create);
+
+router.delete('/memories/:id', ensureLoggedIn, memoriesCtrl.delete);
 
 module.exports = router;
