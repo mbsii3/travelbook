@@ -20,11 +20,11 @@
             <% destination.plans.forEach(function(p) { %>
                 <div class="plans-list">
                     <div class="plan-div">
-                        <input type="checkbox"><%= p.plan %>
-                        <form action="/plans/<%= p._id %>?_method=DELETE" method="POST">
-                            <button type="submit">X</button>
-                        </form>
+                        <div><%= p.plan %></div>
                     </div>
+                    <form action="/plans/<%= p._id %>?_method=DELETE" method="POST" class="delete-plan-form">
+                        <button type="submit" class="delete-plan-btn">X</button>
+                    </form>
                 </div>
             <% }); %>
             <% } else { %>
