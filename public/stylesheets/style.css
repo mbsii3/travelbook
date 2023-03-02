@@ -442,8 +442,7 @@ td {
 
 .memories-header-container {
   display: flex;
-  margin-top: 1rem;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 }
 
 .memories-header-div {
@@ -516,16 +515,42 @@ td {
   color: black;
 }
 
-.memory-date {
+.memory-header-div {
+  display: flex;
   border: 2px solid;
-  padding: 4px;
-  margin-bottom: 1rem;
-  font-size: 11px;
   border-top-style: none;
   border-left-style: none;
   border-right-style: none;
+  margin-bottom: 1rem;
+}
+
+.memory-date {
+  padding: 5px 3px 0 5px;
+  font-size: 11px;
+  display: inline-block;
+  width: 95%;
 }
 
 .memory-div p {
   padding: 0 1rem 1rem 1rem;
+}
+
+.memory-delete-form {
+  display: inline;
+}
+
+.memory-delete-btn {
+  background-color: black;
+  color: white;
+  font-family: 'poppins';
+  font-size: 12px;
+  border: 3px solid;
+  border-color: black;
+  height: 100%;
+}
+
+.memory-delete-btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
 }
