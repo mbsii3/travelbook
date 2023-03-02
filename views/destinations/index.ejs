@@ -1,76 +1,84 @@
 <%- include('../partials/header') %>
 
-<div class="user-index-header-container">
-    <div class="user-index-header-div">
-        <h1 class="user-index-header"><%= user.name %>'s TravelBook</h1>
+<div class="complete-index-container">
+    <div class="user-index-header-container">
+        <div class="user-index-header-div">
+            <h1 class="user-index-header"><%= user.name %>'s TravelBook</h1>
+        </div>
     </div>
-</div>
-
-
-<% if (destinations.length) { %>
-
-<% destinations.forEach(function(d) {  %>
-    <div class="container">
-        <div class="collapsible">
-            <form action="destinations/<%= d._id %>?_method=DELETE" method="POST">
-                <button type="submit" class="delete-btn">X</button>
-            </form>
-            <input type="checkbox" class="edit-checkbox">
-            <div class="destination">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>City</th>
-                            <th>Country</th>
-                            <th>Date</th>
-                            <th>Purpose</th>
-                            <th>Details</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><%= d.city %></td>
-                            <td><%= d.country %></td>
-                            <td><%= (d.date).toLocaleDateString('en-US') %></td>
-                            <td><%= d.purpose %></td>
-                            <td><a href="/destinations/<%= d._id %>">Travel Log</a></td>
-                            
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="collapsible-form">
-                <form action="destinations/<%= d._id %>/?_method=PUT" method="POST" class="edit-form-section">
-                    
-                    <input type="text" name="city" value="<%= d.city %>">
-                    <br>
-                    <input type="text" name="country" value="<%= d.country %>">
-                    <br>
-                    <input type="date" name="date" value="<%= d.date %>">
-                    <br>
-                    <select name="purpose">
-                        <option value="Personal">Personal</option>
-                        <option value="Family">Family</option>
-                        <option value="Business">Business</option>
-                        <option value="Study Abroad">Study Abroad</option>
-                    </select>
-                    <br>
-                    <button type="submit">Update</button>
+    
+    
+    <% if (destinations.length) { %>
+    
+    <% destinations.forEach(function(d) {  %>
+        <div class="container">
+            <div class="collapsible">
+                <form action="destinations/<%= d._id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="delete-btn">X</button>
                 </form>
+                <input type="checkbox" class="edit-checkbox">
+                <div class="destination">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>City</th>
+                                <th>Country</th>
+                                <th>Date</th>
+                                <th>Purpose</th>
+                                <th>Details</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><%= d.city %></td>
+                                <td><%= d.country %></td>
+                                <td><%= (d.date).toLocaleDateString('en-US') %></td>
+                                <td><%= d.purpose %></td>
+                                <td><a href="/destinations/<%= d._id %>">Travel Log</a></td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="collapsible-form">
+                    <form action="destinations/<%= d._id %>/?_method=PUT" method="POST" class="edit-form-section">
+                        
+                        <input type="text" name="city" value="<%= d.city %>">
+                        
+                        <input type="text" name="country" value="<%= d.country %>">
+                        
+                        <input type="date" name="date" value="<%= d.date %>">
+                        
+                        <select name="purpose">
+                            <option value="Personal">Personal</option>
+                            <option value="Family">Family</option>
+                            <option value="Business">Business</option>
+                            <option value="Study Abroad">Study Abroad</option>
+                        </select>
+                        
+                        <button type="submit">Update</button>
+                    </form>
+                </div>
+                
             </div>
             
         </div>
         
-    </div>
+       
+        
+    <% }); %>
     
-   
-    
-<% }); %>
+    <% } else { %>
+        <div class="no-destination-header-container">
+            <div class="no-destination-header-div">
+                <h5 class="no-destination-header">No Destinations Yet</h5>
+            </div>
+            
+        </div>
+    <%  }  %>
+</div>
 
-<% } else { %>
-    <h5>No Destinations Yet</h5>
-<%  }  %>
 
 
 <%- include('../partials/footer') %>

@@ -4,6 +4,8 @@
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('/images/travelbook-bg.jpg');
+  /* background-size: cover; */
 }
 
 a {
@@ -48,6 +50,8 @@ nav a:hover {
 
 }
 
+
+
 table {
   table-layout: fixed;
   width: 80%;
@@ -74,16 +78,37 @@ td {
 }
 
 .user-index-header-div {
-  border: 2px solid;
   border-radius: 2px;
   width: 250px;
   margin-top: 1.5rem;
+  border: 2px solid;
 }
 
 .user-index-header {
   font-size: 14px;
   text-align: center;
   padding: .5rem;
+  background-color: white;
+}
+
+.no-destination-header-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.no-destination-header-div {
+  border-radius: 2px;
+  width: 150px;
+  margin-top: 1.5rem;
+}
+
+.no-destination-header {
+  font-size: 11px;
+  text-align: center;
+  padding: .5rem;
+  border: 2px solid;
+  background-color: white;
 }
 
 .delete-btn {
@@ -110,36 +135,54 @@ td {
   cursor: pointer;
 }
 
+.no-destination-header {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.add-destination-header {
+  display: flex;
+  justify-content: center;
+}
+
+.add-destination-header h1 {
+  margin-top: 3rem;
+  border: 3px solid;
+  padding: 5px;
+  background-color: white;
+}
+
 .new-destination-form {
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 1rem;
 }
 
 .new-destination-square {
-  border: 2px solid;
-  border-radius: 5px;
-  width: 500px;
-  height: 350px;
   display: flex;
   justify-content: center;
+  padding-top: 2rem;
+  border: 3px solid;
+  border-radius: 25px;
+  background-color: white;
+  width: 400px;
 }
 
 .new-destination-form input {
   width: 100%;
-  margin: 8px;
+  margin: 10px 10px 10px 0;
   border-radius: 2px;
   border: 2px solid;
 }
 
 .new-destination-form label {
   font-weight: bold;
-  margin: 8px;
+  margin-top: 5px;
 }
 
 .new-destination-form select {
   width: 100%;
-  margin: 8px;
+  margin: 10px 10px 10px 0;
   border-radius: 2px;
   border: 2px solid;
 }
@@ -148,8 +191,10 @@ td {
   width: 5rem;
   height: 2rem;
   margin: 8px;
-  margin-left: 6rem;
+  margin-left: 5.5rem;
+  margin-bottom: 1rem;
   border-radius: 3px;
+  border-color: black;
   background-color: black;
   color: white;
 }
@@ -160,6 +205,7 @@ td {
 
 .new-destination-form button:hover {
   cursor: pointer;
+  border-color: black;
   background-color: white;
   color: black;
 }
@@ -179,8 +225,8 @@ td {
 .collapsible {
   width: 625px;
   background-color: white;
-  border: 2px solid;
   border-radius: 5px;
+  border: 2px solid;
   white-space: nowrap;
 }
 
@@ -209,25 +255,25 @@ td {
 }
 
 .edit-form-section input {
-  margin: 4px;
+  margin-right: 4px;
   width: 70%;
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 2px;
   font-size: 13px;
 }
 
 .edit-form-section select {
-  margin: 4px;
-  border: 2px solid;
+  margin-right: 4px;
+  border: 1px solid;
   border-radius: 2px;
   font-size: 13px;
 }
 
 .edit-form-section button {
-  margin-top: 1px;
-  height: 26px;
+  height: 20px;
   border: 2px solid;
-  border-radius: 3px;
+  border-radius: 2px;
+  border-color: black;
   background-color: black;
   font-size: 13px;
   color: white;
@@ -246,7 +292,6 @@ td {
 .collapsible-form {
   display: flex;
   justify-content: center;
-  background-color: white;
   max-height: 1px;
   overflow: hidden;
   line-height: 1;
@@ -263,23 +308,24 @@ td {
   top: 0;
 }
 
-.complete-tl-container {
-  height: 100%;
-  width: 800px;
-  margin: 0 auto;
-  border: 2px solid;
-  border-top-style: none;
-  padding: 2rem 0 2rem 0;
-}
-
 .destination-show-header {
   margin: 0 auto;
   display: flex;
   justify-content: center;
 }
 
+.destination-show-div{
+  border-radius: 2px;
+  width: 400px;
+  margin-top: 1.5rem;
+  border: 3px solid;
+  padding: 2px;
+  background-color: white;
+}
+
 .destination-show-div h1 {
   font-size: 2rem;
+  text-align: center;
 }
 
 .tl-plans-container {
@@ -290,11 +336,59 @@ td {
 
 .plans-list {
   list-style: none;
-  margin-bottom: .1rem;
+  margin-bottom: .3rem;
+  font-weight: bold;
 }
 
 .plans-list input {
   margin-right: 1rem;
+}
+
+.plan-div {
+  border: 2px solid;
+  border-radius: 2px;
+  padding: .1rem;
+  background-color: white;
+  color: black;
+}
+
+.plan-form {
+  display: flex;
+}
+
+.plan-div input:hover{
+  cursor: pointer;
+}
+
+.add-plan-input {
+  border: 2px solid;
+}
+
+.add-plan-btn {
+  background-color: black;
+  border: 2px solid;
+  border-color: black;
+  color: white;
+  padding: .5rem;
+}
+
+.add-plan-btn:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.memories-header-container {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 3px;
+}
+
+.memories-header-div {
+  border: 2px solid;
+  font-weight: bold;
+  padding: .2rem;
+  background-color: white;
 }
 
 .tl-memories-container {
@@ -310,9 +404,51 @@ td {
 }
 
 .memory-div {
-  width: 500px;
+  width: 555px;
   margin-top: 1rem;
   border: 2px solid;
   border-radius: 2px;
   padding: 1rem;
+  background-color: white;
+  color: black;
+}
+
+.memory-form {
+  display: flex;
+}
+
+.memory-log-btn {
+  background-color: black;
+  border: 2px solid;
+  border-color: black;
+  color: white;
+  padding: 1rem;
+}
+
+.memory-log-btn:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.no-memories-div {
+  display: flex;
+}
+
+.no-memories-div h5 {
+  background-color: white;
+  border: 1px solid;
+  padding: 2px;
+  margin: 0 auto;
+}
+
+.no-plans-div {
+  display: flex;
+}
+
+.no-plans-div h5 {
+  background-color: white;
+  border: 1px solid;
+  padding: 2px;
+  margin: 0 auto;
 }
