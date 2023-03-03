@@ -30,8 +30,8 @@ const destinationSchema = new Schema({
     },
     date: {
         type: Date,
-        min: '02/25/2023',
-        max: '01/01/2030',
+        min: '03/02/2023',
+        max: '12/31/2030',
         required: true
     },
     purpose: {

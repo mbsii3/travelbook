@@ -50,7 +50,7 @@
             <% destination.memories.forEach(function(m) { %>
                 <div class="memory-div">
                     <div class="memory-header-div">
-                        <div class="memory-date">Memory Made <%= new Date().toLocaleDateString() %></div>
+                        <div class="memory-date">Logged on <%= date2 %></div>
                         <form action="/memories/<%= m._id %>?_method=DELETE" method="POST" class="memory-delete-form">
                         <button type="submit" class="memory-delete-btn">X</button>
                         </form>

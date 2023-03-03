@@ -33,7 +33,7 @@
                             <tr>
                                 <td><%= d.city %></td>
                                 <td><%= d.country %></td>
-                                <td><%= (d.date).toLocaleDateString('en-US') %></td>
+                                <td><%= (d.date).toLocaleDateString() %></td>
                                 <td><%= d.purpose %></td>
                                 <td><a href="/destinations/<%= d._id %>">Travel Log</a></td>
                                 
@@ -48,7 +48,7 @@
                         
                         <input type="text" name="country" value="<%= d.country %>">
                         
-                        <input type="date" name="date" value="<%= d.date %>">
+                        <input type="text" name="date" value="<%= (d.date).toLocaleDateString() %>">
                         
                         <select name="purpose">
                             <option value="Personal">Personal</option>
