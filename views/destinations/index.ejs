@@ -6,11 +6,9 @@
             <h1 class="user-index-header"><%= user.name %>'s TravelBook</h1>
         </div>
     </div>
-    
-    
-    <% if (destinations.length) { %>
-    
+        
     <% destinations.forEach(function(d) {  %>
+        <% if (user?._id.equals(d.user)) { %>
         <div class="container">
             <div class="collapsible">
                 <form action="destinations/<%= d._id %>?_method=DELETE" method="POST">
@@ -26,17 +24,15 @@
                                 <th>Date</th>
                                 <th>Purpose</th>
                                 <th>Details</th>
-                                
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><%= d.city %></td>
                                 <td><%= d.country %></td>
-                                <td><%= (d.date).toLocaleDateString() %></td>
+                                <td><%= moment(d.date).format('l') %></td>
                                 <td><%= d.purpose %></td>
                                 <td><a href="/destinations/<%= d._id %>">Travel Log</a></td>
-                                
                             </tr>
                         </tbody>
                     </table>
@@ -48,7 +44,7 @@
                         
                         <input type="text" name="country" value="<%= d.country %>">
                         
-                        <input type="text" name="date" value="<%= (d.date).toLocaleDateString() %>">
+                        <input type="text" name="date" value="<%= moment(d.date).format('l') %>">
                         
                         <select name="purpose">
                             <option value="Personal">Personal</option>
@@ -56,29 +52,12 @@
                             <option value="Business">Business</option>
                             <option value="Study Abroad">Study Abroad</option>
                         </select>
-                        
                         <button type="submit">Update</button>
                     </form>
                 </div>
-                
             </div>
-            
         </div>
-        
-       
-        
+        <% } %>
     <% }); %>
-    
-    <% } else { %>
-        <div class="no-destination-header-container">
-            <div class="no-destination-header-div">
-                <h5 class="no-destination-header">No Destinations Yet</h5>
-            </div>
-            
-        </div>
-    <%  }  %>
 </div>
-
-
-
 <%- include('../partials/footer') %>

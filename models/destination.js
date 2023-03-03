@@ -30,7 +30,7 @@ const destinationSchema = new Schema({
     },
     date: {
         type: Date,
-        min: '03/02/2023',
+        min: '03/03/2023',
         max: '12/31/2030',
         required: true
     },
@@ -40,7 +40,12 @@ const destinationSchema = new Schema({
         required: true
     },
     plans: [planSchema],
-    memories: [memorySchema]
+    memories: [memorySchema],
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    }
 }, {
     timestamps: true
 });

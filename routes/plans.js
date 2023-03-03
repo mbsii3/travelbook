@@ -6,6 +6,7 @@ const plansCtrl = require('../controllers/plans');
 // POST /destinations/:id/plans
 router.post('/destinations/:id/plans', ensureLoggedIn, plansCtrl.create);
 
+// POST(DELETE) /plans/:id
 router.delete('/plans/:id', ensureLoggedIn, plansCtrl.delete);
 
 module.exports = router;

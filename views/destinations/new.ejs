@@ -5,7 +5,7 @@
 </div>
 
 <section class="new-destination-form">
-    <div class="new-destination-square">
+    <div class="new-destination-div">
         <form action="/destinations" method="POST" class="new-destination-inputs">
             <label>City:</label>
                 <input type="text" name="city">
@@ -14,7 +14,7 @@
                 <input type="text" name="country">
             <br>
             <label>Date:</label>
-                <input type="text" name="date" value="<%= date1 %>">
+                <input type="text" name="date" value="<%= moment(new Date).format('l'); %>">
             <br>
             <label>Purpose:</label>
                 <select name="purpose">
@@ -27,9 +27,6 @@
             <button type="submit">Submit</button>
         </form>
     </div>
-    
 </section>
-
-
 
 <%- include('../partials/footer') %>

@@ -126,26 +126,6 @@ td {
   background-color: white;
 }
 
-.no-destination-header-container {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
-
-.no-destination-header-div {
-  border-radius: 2px;
-  width: 150px;
-  margin-top: 1.5rem;
-}
-
-.no-destination-header {
-  font-size: 11px;
-  text-align: center;
-  padding: .5rem;
-  border: 2px solid;
-  background-color: white;
-}
-
 .delete-btn {
   display: flex;
   background-color: lightcoral;
@@ -172,11 +152,6 @@ td {
   cursor: pointer;
 }
 
-.no-destination-header {
-  margin-top: 1rem;
-  text-align: center;
-}
-
 .add-destination-header {
   display: flex;
   justify-content: center;
@@ -195,7 +170,7 @@ td {
   margin-top: 1rem;
 }
 
-.new-destination-square {
+.new-destination-div {
   display: flex;
   justify-content: center;
   padding-top: 2rem;

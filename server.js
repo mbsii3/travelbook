@@ -6,8 +6,6 @@ const logger = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
-const moment = require('moment');
-
 
 require('dotenv').config();
 require('./config/database');
@@ -17,7 +15,6 @@ const indexRouter = require('./routes/index');
 const destinationsRouter = require('./routes/destinations');
 const plansRouter = require('./routes/plans');
 const memoriesRouter = require('./routes/memories');
-
 
 const app = express();
 
@@ -32,7 +29,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
-
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
@@ -41,18 +37,14 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(function(req, res, next) {
   res.locals.user = req.user;
   next();
 });
 
 app.use(function(req, res, next) {
-  res.locals.date1 = moment().format('l');
-  next();
-});
-
-app.use(function(req, res, next) {
-  res.locals.date2 = moment().format('LL');
+  res.locals.moment = require('moment');
   next();
 });
 

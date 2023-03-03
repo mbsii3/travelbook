@@ -22,6 +22,7 @@ function newDestination(req, res) {
 }
 
 function create(req, res) {
+    req.body.user = req.user._id;
     let destination = new Destination(req.body);
     destination.save(function(err) {
         if (err) return res.redirect('/destinations/new');

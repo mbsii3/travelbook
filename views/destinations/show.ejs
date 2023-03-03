@@ -6,8 +6,6 @@
     </div>
 </div>
 
-
-
 <section class="tl-plans-container">
     <div class="tl-plans-div">
         <form action="/destinations/<%= destination._id %>/plans" method="POST" class="plan-form">
@@ -15,7 +13,6 @@
             <button type="submit" class="add-plan-btn">Add</button>
         </form>
         <br>
-    
         <% if (destination.plans.length) { %>
             <% destination.plans.forEach(function(p) { %>
                 <div class="plans-list">
@@ -34,7 +31,6 @@
             <%  }  %>
     </div>
 </section>
-
 <br>
 <section class="tl-memories-container">
     <div class="tl-memories-div">
@@ -50,7 +46,7 @@
             <% destination.memories.forEach(function(m) { %>
                 <div class="memory-div">
                     <div class="memory-header-div">
-                        <div class="memory-date">Logged on <%= date2 %></div>
+                        <div class="memory-date">Logged on <%= moment(m.createdAt).format('LL') %></div>
                         <form action="/memories/<%= m._id %>?_method=DELETE" method="POST" class="memory-delete-form">
                         <button type="submit" class="memory-delete-btn">X</button>
                         </form>
@@ -64,8 +60,6 @@
                 </div>
             <%  }  %>
     </div>
-    
 </section>
-
 
 <%- include('../partials/footer') %>

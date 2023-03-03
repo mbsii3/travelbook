@@ -1,4 +1,3 @@
-const destination = require('../models/destination');
 const Destination = require('../models/destination');
 
 module.exports = {
