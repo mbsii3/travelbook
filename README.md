@@ -4,15 +4,15 @@ TravelBook is a web application that allows avid travelers to organize their upc
 
 ## About The Project
 
-![App home page](./images/travelbook-hp.jpg)
+![App home page](./public/images/travelbook-hp.jpg)
 
-![App destinations index](./images/travelbook-idx.jpg)
+![App destinations index](./public/images/travelbook-idx.jpg)
 
-![App add destination view](./images/travelbook-add.jpg)
+![App add destination view](./public/images/travelbook-add.jpg)
 
-![App travel log view](./images/travelbook-tl.jpg)
+![App travel log view](./public/images/travelbook-tl.jpg)
 
-![App new empty travel log view](./images/travelbook-ntl.jpg)
+![App new empty travel log view](./public/images/travelbook-ntl.jpg)
 
 I wanted to develop TravelBook as a foundation for an application that not only allows users to log their personal experiences and memories about their travels, but I wanted it to also be a productive app that helps take some of the stress of organizing and making their travel plans.  TravelBook looks to help travelers by acting as a quick and easy to use travel plans to-do list, while also being a travel diary where the user can create and upload new memories and experiences, while also giving them the functionality to update and delete any memories or destinations that they no longer want in their personal TravelBook.  This project really allowed me to utilize all the new skills I have learned with technologies such as NodeJS, Express, MongoDB, and EJS.  Overall, this project was extremely fun to develop and it really allowed me to put my creative mind and my new technical skills to the test.
 
